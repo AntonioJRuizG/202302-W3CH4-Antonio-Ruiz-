@@ -1,14 +1,13 @@
 /* eslint-disable no-new */
 /* eslint-disable no-unused-vars */
-import { TaskStructure } from '../../models/task';
+import { SerieStructure } from '../../models/serie';
 import { TaskStorageRepo } from '../../services/repository/task.storage.repo';
 import { Add } from '../add/add';
 import { Card } from '../card/card';
 import { Component } from '../component/component';
-import './tasks.scss';
 
 export class Tasks extends Component {
-  public tasks: TaskStructure[];
+  public tasks: SerieStructure[];
   constructor(public selector: string, public repo: TaskStorageRepo) {
     super();
     this.tasks = this.repo.getTasks();
@@ -16,19 +15,19 @@ export class Tasks extends Component {
     this.render('afterbegin');
   }
 
-  addTask(task: TaskStructure) {
+  addTask(task: SerieStructure) {
     this.tasks = [...this.tasks, task];
     this.render('afterbegin');
     this.repo.setTasks(this.tasks);
   }
 
-  deleteTask(id: TaskStructure['id']) {
+  deleteTask(id: SerieStructure['id']) {
     this.tasks = this.tasks.filter((item) => item.id !== id);
     this.render('afterbegin');
     this.repo.setTasks(this.tasks);
   }
 
-  updateTask(task: TaskStructure) {
+  updateTask(task: SerieStructure) {
     this.tasks = this.tasks.map((item) => (item.id === task.id ? task : item));
     this.render('afterbegin');
     this.repo.setTasks(this.tasks);

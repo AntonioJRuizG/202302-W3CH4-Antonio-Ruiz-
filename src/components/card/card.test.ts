@@ -1,13 +1,13 @@
 import { screen, fireEvent } from '@testing-library/dom';
 import '@testing-library/jest-dom';
 import { Card } from './card';
-import { TaskStructure } from '../../models/task';
-import { TASKS } from '../../mocks/tasks';
+import { SerieStructure } from '../../models/serie';
+import { SERIES } from '../../mocks/series';
 
 describe('Given Card component', () => {
   const deleteMock = jest.fn();
   const updateMock = jest.fn();
-  const mockTask: TaskStructure = TASKS[0];
+  const mockTask: SerieStructure = SERIES[0];
   let element: Card;
   beforeEach(() => {
     document.body.innerHTML = '<ul></ul>';

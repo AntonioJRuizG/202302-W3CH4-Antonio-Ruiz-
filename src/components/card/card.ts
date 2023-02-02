@@ -1,14 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { TaskStructure } from '../../models/task';
+import { SerieStructure } from '../../models/serie';
 import { Component } from '../component/component';
-import './card.scss';
 
 export class Card extends Component {
   constructor(
     public selector: string,
-    public task: TaskStructure,
-    public deleteTask: (id: TaskStructure['id']) => void,
-    public updateTask: (task: TaskStructure) => void
+    public task: SerieStructure,
+    public deleteTask: (id: SerieStructure['id']) => void,
+    public updateTask: (task: SerieStructure) => void
   ) {
     super();
     this.task = { ...task };
