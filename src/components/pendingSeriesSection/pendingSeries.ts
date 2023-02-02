@@ -18,7 +18,7 @@ export class PendingSeries extends Component {
   }
 
   render(place: globalThis.InsertPosition) {
-    // document.querySelector('.series-list')!.innerHTML = '';
+    // Document.querySelector('.series-list')!.innerHTML = '';
     super.render(place);
     this.series.forEach((item) => {
       // eslint-disable-next-line no-unused-expressions
