@@ -5,7 +5,6 @@ import { TaskStorageRepo } from '../../services/repository/task.storage.repo';
 import { Add } from '../add/add';
 import { Card } from '../card/card';
 import { Component } from '../component/component';
-import './tasks.scss';
 
 export class Tasks extends Component {
   public tasks: SerieStructure[];

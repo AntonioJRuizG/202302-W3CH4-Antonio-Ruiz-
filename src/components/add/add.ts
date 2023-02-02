@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Task, SerieStructure } from '../../models/serie';
+import { SerieStructure } from '../../models/serie';
 import { Component } from '../component/component';
 
 export class Add extends Component {
