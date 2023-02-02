@@ -1,7 +1,7 @@
 {
-  "name": "week2 - TS",
+  "name": "week3-challenge4",
   "version": "1.0.0",
-  "description": "Ejercicios semana 2 . Bootcamp Madrid",
+  "description": "Challange 4 semana 3. Bootcamp Madrid",
   "main": "index.js",
   "type": "module",
   "scripts": {
