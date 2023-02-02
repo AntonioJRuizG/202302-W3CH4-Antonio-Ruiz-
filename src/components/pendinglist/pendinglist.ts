@@ -1,23 +1,12 @@
 /* eslint-disable no-unused-vars */
 
-import { SerieStructure } from '../../models/serie';
 import { Component } from '../component/component';
-import { Serie } from '../serie/serie';
 
-export class PendingSeries extends Component {
-  constructor(public selector: string, public series: SerieStructure[]) {
+export class PendingSeriesList extends Component {
+  constructor(public selector: string) {
     super();
     this.template = this.createTemplate();
     this.render('afterbegin');
-  }
-
-  render(place: globalThis.InsertPosition) {
-    (document.querySelector('main') as HTMLElement).innerHTML = '';
-    super.render(place);
-    this.series.forEach((item) => {
-      // eslint-disable-next-line no-new
-      new Serie('.series-list', item);
-    });
   }
 
   private createTemplate() {
@@ -30,5 +19,9 @@ export class PendingSeries extends Component {
         </ul>
       </section>
     `;
+  }
+
+  render(place: globalThis.InsertPosition) {
+    super.render(place);
   }
 }
