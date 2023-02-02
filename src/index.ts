@@ -1,12 +1,11 @@
 /* eslint-disable no-new */
 import { Header } from './components/header/header';
+import { PendingSeries } from './components/pendingSeriesSection/pendingSeries';
 import { SeriesSection } from './components/seriesSection/seriesSection';
-import { Tasks } from './components/tasks/tasks';
-import { TaskStorageRepo } from './services/repository/task.storage.repo';
+import { WatchedSeries } from './components/watchedSeriesSection/watchedSeries';
 
 console.log('Load', location.pathname);
 new Header('.container');
 new SeriesSection('.main');
-if (location.pathname === '/home') {
-  new Tasks('main', new TaskStorageRepo());
-}
+new PendingSeries('.series');
+new WatchedSeries('.series');
