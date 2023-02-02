@@ -1,11 +1,9 @@
-/* eslint-disable no-new */
 /* eslint-disable no-unused-vars */
 
 import { Component } from '../component/component';
-import './header.scss';
 
 export class Header extends Component {
-  constructor(public selector: string, public title: string = 'Learning DOM') {
+  constructor(public selector: string) {
     super();
     this.template = this.createTemplate();
     this.render('afterbegin');
@@ -13,10 +11,9 @@ export class Header extends Component {
 
   private createTemplate() {
     return `
-      <header class="header">
-        <h1>${this.title}</h1>
-        <p role="note" aria-label="info">Segundo día</p>
-      </header>
+      <header class="main-header">
+      <h1 class="main-title">My Series</h1>
+    </header>
     `;
   }
 
