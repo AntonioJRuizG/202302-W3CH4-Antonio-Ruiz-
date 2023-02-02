@@ -12,8 +12,8 @@ export class Header extends Component {
   private createTemplate() {
     return `
       <header class="main-header">
-      <h1 class="main-title">My Series</h1>
-    </header>
+        <h1 class="main-title">My Series</h1>
+      </header>
     `;
   }
 
