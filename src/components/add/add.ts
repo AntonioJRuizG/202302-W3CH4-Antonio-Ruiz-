@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { Task, TaskStructure } from '../../models/task';
+import { Task, SerieStructure } from '../../models/serie';
 import { Component } from '../component/component';
 
 export class Add extends Component {
   constructor(
     public selector: string,
-    public addTask: (task: TaskStructure) => void
+    public addTask: (task: SerieStructure) => void
   ) {
     super();
     this.template = this.createTemplate();
