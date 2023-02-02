@@ -1,12 +1,30 @@
 /* eslint-disable no-unused-vars */
 
+import { SerieStructure } from '../../models/serie';
 import { Component } from '../component/component';
+import { Serie } from '../serie/serie';
 
 export class PendingSeries extends Component {
-  constructor(public selector: string) {
+  constructor(public selector: string, public series: SerieStructure[]) {
     super();
     this.template = this.createTemplate();
-    this.render('beforeend');
+    this.render('afterend');
+  }
+
+  deleteSeries(id: SerieStructure['id']) {
+    this.series = this.series.filter((item) => item.id !== id);
+    this.render('afterbegin');
+    console.log(this.series);
+  }
+
+  render(place: globalThis.InsertPosition) {
+    // document.querySelector('.series-list')!.innerHTML = '';
+    super.render(place);
+    this.series.forEach((item) => {
+      // eslint-disable-next-line no-unused-expressions
+      !item.watched &&
+        new Serie('.series-list', item, this.deleteSeries.bind(this));
+    });
   }
 
   private createTemplate() {
@@ -19,9 +37,5 @@ export class PendingSeries extends Component {
         </ul>
       </section>
     `;
-  }
-
-  render(place: globalThis.InsertPosition) {
-    super.render(place);
   }
 }
