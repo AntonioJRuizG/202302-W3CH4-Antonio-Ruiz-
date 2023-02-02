@@ -8,5 +8,5 @@ import { SERIES } from './mocks/series';
 console.log('Load', location.pathname);
 new Header('.container');
 new SeriesSection('.main');
-new PendingSeries('.series', SERIES);
-new WatchedSeries('.series');
+new PendingSeries('.section-title', SERIES);
+new WatchedSeries('.series', SERIES);
